@@ -68,11 +68,11 @@ let s:blue_deep = '#2F3973'
 " call s:my_highlight('VertSplit',        '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 垂直分割したウィンドウの区切りとなる桁
 call s:my_highlight('Folded',           s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 閉じた折りたたみの行
 " call s:my_highlight('FoldColumn',       '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 'foldcolumn'
-" call s:my_highlight('SignColumn',        '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 目印signsが表示される桁
+call s:my_highlight('SignColumn',       s:linenr_fg, '#xxxxxx', '#xxxxxx', 'NONE')  " 目印signsが表示される桁
 " call s:my_highlight('IncSearch',        '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 'incsearch'のハイライト; ':s ///c'で置換されたテキストにも使われる
 call s:my_highlight('LineNr',           s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " ':number'と':#'コマンドの行番号。'number'オプションか'relativenumber'にも使用。
-" call s:my_highlight('LineNrAvove',      '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 'relativenumber'オプションが設定されている時のカーソル行の上の行番号。
-" call s:my_highlight('LineNrBelow',      '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 'relativenumber'オプションが設定されている時のカーソル行の下の行番号。
+call s:my_highlight('LineNrAvove',      s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " 'relativenumber'オプションが設定されている時のカーソル行の上の行番号。
+call s:my_highlight('LineNrBelow',      s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " 'relativenumber'オプションが設定されている時のカーソル行の下の行番号。
 " call s:my_highlight('CursorLineNr',     '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 " call s:my_highlight('CursorLineSign',   '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 
 " call s:my_highlight('CursorLineFold',   '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 
@@ -114,16 +114,6 @@ call s:my_highlight('Normal',           s:normal_fg, s:norma_bg, '#xxxxxx', 'NON
 " }}}
 
 
-" Vim Help highlighting ---------------------------------------------------{{{
-
-" call s:my_highlight('helpCommand',      '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
-" call s:my_highlight('helpExample',      '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
-" call s:my_highlight('helpHeader',       '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
-" call s:my_highlight('helpSectionDelim', '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
-
-" }}}ii
-
-
 
 " Standiard syntax highlighting --------------------------------------------{{{
 
@@ -132,8 +122,8 @@ call s:my_highlight('Constant',         s:orange_lite, '#xxxxxx', '#xxxxxx', 'NO
 call s:my_highlight('String',           s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 文字列定数
 call s:my_highlight('Character',        s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 文字定数
 call s:my_highlight('Number',           '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 数値定数
-call s:my_highlight('Float',            '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 浮動小数点数の定数
 call s:my_highlight('Boolean',          '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " ブール値の定数
+call s:my_highlight('Float',            '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 浮動小数点数の定数
 call s:my_highlight('Identifier',       '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 変数名
 call s:my_highlight('Function',         s:orange_lite, '#xxxxxx', '#xxxxxx', 'NONE')  " 関数名
 call s:my_highlight('Statement',        '#f2ac57', '#xxxxxx', '#xxxxxx', 'NONE')  " 命令文
@@ -163,5 +153,18 @@ call s:my_highlight('Exception',        '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
 call s:my_highlight('Error',            '#E06C75', '#xxxxxx', '#xxxxxx', 'NONE')  " エラーなど、何らかの誤った構造
 " call s:my_highlight('Todo',             '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 特別な注意が必要なもの; 大抵は TODO FIXME XXX などのキーワード
 
+
+
 " }}}
 
+
+
+
+" Vim Help highlighting ---------------------------------------------------{{{
+
+" call s:my_highlight('helpCommand',      '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
+" call s:my_highlight('helpExample',      '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
+" call s:my_highlight('helpHeader',       '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
+" call s:my_highlight('helpSectionDelim', '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')
+
+" }}}
