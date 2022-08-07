@@ -32,19 +32,24 @@ endfunction
 
 " color pallet
 let s:normal_fg = '#abb2bf'
-let s:norma_bg = '#282c34'
+let s:norma_bg  = '#282c34'
+
 let s:linenr_fg = '#646975'
 let s:linenr_bg = '#2e373b'
-let s:black = ''
+
 let s:grey_lite = '#abb2bf'
 let s:grey_deep = '#5c6370'
-let s:black_deep = ''
+
 let s:orange_lite = '#f2ac57'
-let s:orange_deep = '#f28444'
-let s:red_lite = ''
-let s:red_dark = ''
-let s:blue_lite = ''
-let s:blue_deep = '#2F3973'
+let s:orange_midd = '#f28444'
+let s:orange_deep = '#e66422'
+
+let s:gold_lite = '#e6b422'
+let s:gold_deep = '#D4AC04'
+
+let s:red_lite = '#E73647'
+let s:red_dark = '#C03647'
+
 
 
 
@@ -114,48 +119,54 @@ call s:my_highlight('Normal',           s:normal_fg, s:norma_bg, '#xxxxxx', 'NON
 " }}}
 
 
-
 " Standiard syntax highlighting --------------------------------------------{{{
 
 call s:my_highlight('Comment',          s:grey_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " コメント 
+
 call s:my_highlight('Constant',         s:orange_lite, '#xxxxxx', '#xxxxxx', 'NONE')  " 定数
-call s:my_highlight('String',           s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 文字列定数
+call s:my_highlight('String',           s:gold_lite, '#xxxxxx', '#xxxxxx', 'NONE')  " 文字列定数
 call s:my_highlight('Character',        s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 文字定数
-call s:my_highlight('Number',           '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 数値定数
-call s:my_highlight('Boolean',          '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " ブール値の定数
-call s:my_highlight('Float',            '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 浮動小数点数の定数
-call s:my_highlight('Identifier',       '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 変数名
+call s:my_highlight('Number',           s:gold_lite, '#xxxxxx', '#xxxxxx', 'NONE')  " 数値定数
+call s:my_highlight('Float',            s:gold_lite, '#xxxxxx', '#xxxxxx', 'NONE')  " 浮動小数点数の定数
+call s:my_highlight('Boolean',          s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " ブール値の定数
+
+call s:my_highlight('Identifier',       s:orange_midd, '#xxxxxx', '#xxxxxx', 'NONE')  " 変数名
 call s:my_highlight('Function',         s:orange_lite, '#xxxxxx', '#xxxxxx', 'NONE')  " 関数名
-call s:my_highlight('Statement',        '#f2ac57', '#xxxxxx', '#xxxxxx', 'NONE')  " 命令文
-call s:my_highlight('Conditional',      '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " if, then, else, endif, which, etc.
-call s:my_highlight('Repeat',           '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " for, do, while, etc.
-call s:my_highlight('Label',            '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " case, default, etc.
-call s:my_highlight('Operator',         '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 'sizeof', '+', '*', etc.
-call s:my_highlight('Keyword',          '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " その他キーワード
-call s:my_highlight('Exception',        '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " try, catch, throw
-" call s:my_highlight('PreProc',          '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 一般的なプリプロセッサー命令
-" call s:my_highlight('Include',          '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " #include プリプロセッサー
-" call s:my_highlight('Define',           '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " #define プリプロセッサー
-" call s:my_highlight('Macro',            '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " Defineと同値 
-" call s:my_highlight('PreCondit',        '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " プリプロセッサーの #if, #else, #endif, etc.
-" call s:my_highlight('Type',             '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " int, long, char, etc.
-" call s:my_highlight('StorageClass',     '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " static, register, volatile, etc..
-" call s:my_highlight('Structure',        '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " srtuct, union, enum, etc.
-" call s:my_highlight('Typedef',          '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " typedef宣言
-" call s:my_highlight('Special',          '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 特殊なシンボル
-" call s:my_highlight('SpecialChar',      '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 特殊な文字定数
-" call s:my_highlight('Tag',              '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " この上でCTRL-]を使うことができる
-" call s:my_highlight('Delimiter',        '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 注意が必要な文字
-" call s:my_highlight('SpecialComment',   '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " コメント内の特記事項
-" call s:my_highlight('Debug',            '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " デバッグ命令
-" call s:my_highlight('Underlined',       '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 目立つ文章, HTMLリンク
-" call s:my_highlight('Ignore',           '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " (見た目上)空白, 不可視
-call s:my_highlight('Error',            '#E06C75', '#xxxxxx', '#xxxxxx', 'NONE')  " エラーなど、何らかの誤った構造
+
+call s:my_highlight('Statement',        s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 命令文
+call s:my_highlight('Conditional',      s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " if, then, else, endif, which, etc.
+call s:my_highlight('Repeat',           s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " for, do, while, etc.
+call s:my_highlight('Label',            s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " case, default, etc.
+call s:my_highlight('Operator',         s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 'sizeof', '+', '*', etc.
+call s:my_highlight('Keyword',          s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " その他キーワード
+call s:my_highlight('Exception',        s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " try, catch, throw
+
+call s:my_highlight('PreProc',          s:orange_midd, '#xxxxxx', '#xxxxxx', 'NONE')  " 一般的なプリプロセッサー命令
+call s:my_highlight('Include',          s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " #include プリプロセッサー
+call s:my_highlight('Define',           s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " #define プリプロセッサー
+call s:my_highlight('Macro',            s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " Defineと同値 
+call s:my_highlight('PreCondit',        s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " プリプロセッサーの #if, #else, #endif, etc.
+
+call s:my_highlight('Type',             s:gold_lite, '#xxxxxx', '#xxxxxx', 'NONE')  " int, long, char, etc.
+call s:my_highlight('StorageClass',     s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " static, register, volatile, etc..
+call s:my_highlight('Structure',        s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " srtuct, union, enum, etc.
+call s:my_highlight('Typedef',          s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " typedef宣言
+
+call s:my_highlight('Special',          s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 特殊なシンボル
+call s:my_highlight('SpecialChar',      s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 特殊な文字定数
+call s:my_highlight('Tag',              s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " この上でCTRL-]を使うことができる
+call s:my_highlight('Delimiter',        s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 注意が必要な文字
+call s:my_highlight('SpecialComment',   s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " コメント内の特記事項
+call s:my_highlight('Debug',            s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " デバッグ命令
+
+call s:my_highlight('Underlined',       s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 目立つ文章, HTMLリンク
+call s:my_highlight('Ignore',           s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " (見た目上)空白, 不可視
+call s:my_highlight('Error',            s:red_dark, '#xxxxxx', '#xxxxxx', 'NONE')  " エラーなど、何らかの誤った構造
 " call s:my_highlight('Todo',             '#xxxxxx', '#xxxxxx', '#xxxxxx', 'NONE')  " 特別な注意が必要なもの; 大抵は TODO FIXME XXX などのキーワード
 
 
 
-" }}}
+" }}}i
 
 
 
