@@ -2,6 +2,10 @@
 
 model: penny lane from Almost Famous
 
+<p align="center">
+  <img src="images/penny-lane.jpeg"/>
+</p>
+
 ## plugin(for dev)
 - [cocopon/colorswatch.vim](https://github.com/cocopon/colorswatch.vim)
 - [cocopon/inspecthi.vim](https://github.com/cocopon/inspecthi.vim)

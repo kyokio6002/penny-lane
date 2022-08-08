@@ -1,5 +1,15 @@
-*
-!README.md
+# keys
+*.pem
+*.key
+*.der
+*.p12
 
-!penny-lane.vim
-!.gitignore
+# conf and ...
+*.swp
+.DS_Store
+__pycache__/
+.idea/
+*.pyc
+__init__.py
+
+# my
