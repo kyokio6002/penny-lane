@@ -71,7 +71,7 @@ let s:red_dark = '#C03647'
 " call s:my_highlight('DiffChange',       '#xxxxxx',     '#xxxxxx', '#xxxxxx', 'NONE')  " 差分モード: 変更された行
 " call s:my_highlight('DiffDelete',       '#xxxxxx',     '#xxxxxx', '#xxxxxx', 'NONE')  " 差分モード: 削除された行
 " call s:my_highlight('DiffText',         '#xxxxxx',     '#xxxxxx', '#xxxxxx', 'NONE')  " 差分モード: 変更された行中の変更されたテキスト
-" call s:my_highlight('EndOfBuffer',      '#xxxxxx',     '#xxxxxx', '#xxxxxx', 'NONE')  " バッファ中で最終業以降の領域を埋めるための行
+call s:my_highlight('EndOfBuffer',      s:orange_midd, '#xxxxxx', '#xxxxxx', 'NONE')  " バッファ中で最終業以降の領域を埋めるための行
 " call s:my_highlight('ErrorMsg',         '#xxxxxx',     '#xxxxxx', '#xxxxxx', 'NONE')  " コマンドラインに現れるエラーメッセージ
 " call s:my_highlight('VertSplit',        '#xxxxxx',     '#xxxxxx', '#xxxxxx', 'NONE')  " 垂直分割したウィンドウの区切りとなる桁
 call s:my_highlight('Folded',           s:orange_deep, '#xxxxxx', '#xxxxxx', 'NONE')  " 閉じた折りたたみの行
