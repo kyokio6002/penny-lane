@@ -67,10 +67,10 @@ call s:my_highlight('CursorIM',         s:norma_bg,  s:normal_fg, '#xxxxxx', 'NO
 " call s:my_highlight('CursorColumn',     '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 'cursorcolumn'がオンになっている時のカードル画面上の桁
 " call s:my_highlight('CursorLine',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 'cursorline'がオンになっている時のカーソルがある画面上の行
 call s:my_highlight('Directory',        s:gold_lite, '#xxxxxx',   '#xxxxxx', 'NONE')  " ディレクトリ名(とリストにある特別な名前)
-" call s:my_highlight('DiffAdd',          '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 差分モード: 追加された行
-" call s:my_highlight('DiffChange',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 差分モード: 変更された行
-" call s:my_highlight('DiffDelete',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 差分モード: 削除された行
-" call s:my_highlight('DiffText',         '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 差分モード: 変更された行中の変更されたテキスト
+call s:my_highlight('DiffAdd',          '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 差分モード: 追加された行
+call s:my_highlight('DiffChange',       '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 差分モード: 変更された行
+call s:my_highlight('DiffDelete',       '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 差分モード: 削除された行
+call s:my_highlight('DiffText',         '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 差分モード: 変更された行中の変更されたテキスト
 call s:my_highlight('EndOfBuffer',      s:orn_midd,  '#xxxxxx',   '#xxxxxx', 'NONE')  " バッファ中で最終業以降の領域を埋めるための行
 " call s:my_highlight('ErroGrMsg',         '#xxxxxx',  '#xxxxxx',   '#xxxxxx', 'NONE')  " コマンドラインに現れるエラーメッセージ
 call s:my_highlight('VertSplit',        s:grey_lite, '#xxxxxx',   '#xxxxxx', 'NONE')  " 垂直分割したウィンドウの区切りとなる桁
