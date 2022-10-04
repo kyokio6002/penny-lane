@@ -1,9 +1,9 @@
 " vim:fdm=marker
 " Vim Color File
 " Name:       penny-lane.vim
-" Maintainer: 
+" Maintainer: kyokio6002
 " License:    The MIT License (MIT)
-" Based On:   https://github.com/--- 
+" Based On:   https://github.com/joshdick/onedark.vim
 
 let colors_name = "penny-lane"
 
@@ -40,7 +40,8 @@ let s:linenr_fg = '#646975'
 let s:linenr_bg = '#2e373b'
 
 let s:grey_lite = '#abb2bf'
-let s:grey_deep = '#5c6370'
+let s:grey_midd = '#5c6370'
+let s:grey_deep = '#474d5c'
 
 let s:orn_lite = '#f2ac57'
 let s:orn_midd = '#f28444'
@@ -77,7 +78,7 @@ call s:my_highlight('VertSplit',        s:grey_lite, '#xxxxxx',   '#xxxxxx', 'NO
 call s:my_highlight('Folded',           s:orn_deep,  '#xxxxxx',   '#xxxxxx', 'NONE')  " 閉じた折りたたみの行
 " call s:my_highlight('FoldColumn',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 'foldcolumn'
 call s:my_highlight('SignColumn',       s:linenr_fg, '#xxxxxx',   '#xxxxxx', 'NONE')  " 目印signsが表示される桁
-call s:my_highlight('IncSearch',        s:grey_deep, s:gold_lite, '#xxxxxx', 'NONE')  " 'incsearch'のハイライト; ':s ///c'で置換されたテキストにも使われる
+call s:my_highlight('IncSearch',        s:grey_midd, s:gold_lite, '#xxxxxx', 'NONE')  " 'incsearch'のハイライト; ':s ///c'で置換されたテキストにも使われる
 call s:my_highlight('LineNr',           s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " ':number'と':#'コマンドの行番号。'number'オプションか'relativenumber'にも使用。
 call s:my_highlight('LineNrAvove',      s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " 'relativenumber'オプションが設定されている時のカーソル行の上の行番号。
 call s:my_highlight('LineNrBelow',      s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " 'relativenumber'オプションが設定されている時のカーソル行の下の行番号。
@@ -89,14 +90,14 @@ call s:my_highlight('ModeMsg',          s:orn_deep,  '#xxxxxx',   '#xxxxxx', 'NO
 " call s:my_highlight('MoreMsg',          '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " more-prompt
 call s:my_highlight('NonText',          s:orn_deep,  '#xxxxxx',   '#xxxxxx', 'NONE')  " ウィンドウの端の'@'と'showbreak'で設定された文字など、実際のテキストには存在しない文字。
 call s:my_highlight('Normal',           s:normal_fg, s:norma_bg,  '#xxxxxx', 'NONE')  " 通常のテキスト
-call s:my_highlight('PMenu',            s:grey_lite, s:grey_deep, '#xxxxxx', 'NONE')  " ポップアップメニュー: 通常のテキスト
+call s:my_highlight('PMenu',            s:grey_lite, s:grey_midd, '#xxxxxx', 'NONE')  " ポップアップメニュー: 通常のテキスト
 call s:my_highlight('PMenuSel',         s:orn_deep,  s:grey_lite, '#xxxxxx', 'NONE')  " ポップアップメニュー: 選択されている項目
-call s:my_highlight('PMenuSbar',        s:grey_deep, s:grey_deep, '#xxxxxx', 'NONE')  " ポップアップメニュー: スクロールバー
+call s:my_highlight('PMenuSbar',        s:grey_midd, s:grey_deep, '#xxxxxx', 'NONE')  " ポップアップメニュー: スクロールバー
 call s:my_highlight('PMenuThumb',       s:grey_lite, s:grey_lite, '#xxxxxx', 'NONE')  " ポップアップメニュー: スクロールバーのつまみ部分
 " call s:my_highlight('Question',         '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " ヒットエンタープロンプトhit-enterとyes/noクエスチョン
 " call s:my_highlight('QuickFixLine',     '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " quickfixウィンドウ内の現在のquickfix項目
-call s:my_highlight('Search',           s:grey_deep, s:gold_lite, '#xxxxxx', 'NONE')  " 最後に検索した語のハイライト
-call s:my_highlight('CurSearch',        s:grey_deep, s:gold_lite, '#xxxxxx', 'NONE')  " 最後に検索した語のハイライト
+call s:my_highlight('Search',           s:grey_midd, s:gold_lite, '#xxxxxx', 'NONE')  " 最後に検索した語のハイライト
+call s:my_highlight('CurSearch',        s:grey_midd, s:gold_lite, '#xxxxxx', 'NONE')  " 最後に検索した語のハイライト
 " call s:my_highlight('SpecialKey',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " ':map'でリストされるメタキーと特別なキー
 " call s:my_highlight('SpellBad',         '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'None')  " スペルチェッカに認識されない単語
 " call s:my_highlight('SpellCap',         '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'None')  " 大文字で始まるべき単語
@@ -124,7 +125,7 @@ call s:my_highlight('VisualNOS',        '#xxxxxx',   s:orn_deep,  '#xxxxxx', 'NO
 
 " Standiard Syntax Group ············································{{{
 
-call s:my_highlight('Comment',          s:grey_deep, '#xxxxxx',   '#xxxxxx', 'NONE')  " コメント 
+call s:my_highlight('Comment',          s:grey_midd, '#xxxxxx',   '#xxxxxx', 'NONE')  " コメント 
 
 call s:my_highlight('Constant',         s:orn_lite,  '#xxxxxx',   '#xxxxxx', 'NONE')  " 定数
 call s:my_highlight('String',           s:gold_lite, '#xxxxxx',   '#xxxxxx', 'NONE')  " 文字列定数
