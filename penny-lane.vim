@@ -1,9 +1,9 @@
 " vim:fdm=marker
 " Vim Color File
 " Name:       penny-lane.vim
-" Maintainer: 
+" Maintainer: kyokio6002
 " License:    The MIT License (MIT)
-" Based On:   https://github.com/--- 
+" Based On:   https://github.com/joshdick/onedark.vim
 
 let colors_name = "penny-lane"
 
