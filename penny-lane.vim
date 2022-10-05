@@ -13,13 +13,18 @@ if exists("syntax_on")
   syntax reset
 endif
 
-" scope
+
+" Scope info {{{
+
 " l: ローカルスコープ(関数内)
 " s: スクリプトスコープ(スクリプト内)
 " g: グローバルスコープ(グローバル)
 " b: バッファスコープ
 " w: ウィンドウスコープ
 " t: タブスコープ
+
+" }}}
+
 
 function! s:my_highlight(group, fg, bg, sp, gui) abort
   execute "highlight" a:group
