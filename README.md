@@ -3,8 +3,14 @@
 model: penny lane from Almost Famous
 
 <p align="center">
-  <img src="images/penny-lane.jpeg"/>
+  <img src="images/penny-lane.gif"/>
 </p>
+
+## color reference
+<p align="center">
+  <img src="images/color_pallet_mini.png"/>
+</p>
+
 
 ## plugin(for dev)
 - [cocopon/colorswatch.vim](https://github.com/cocopon/colorswatch.vim)
