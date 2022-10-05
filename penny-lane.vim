@@ -13,13 +13,18 @@ if exists("syntax_on")
   syntax reset
 endif
 
-" scope
+
+" Scope info {{{
+
 " l: ローカルスコープ(関数内)
 " s: スクリプトスコープ(スクリプト内)
 " g: グローバルスコープ(グローバル)
 " b: バッファスコープ
 " w: ウィンドウスコープ
 " t: タブスコープ
+
+" }}}
+
 
 function! s:my_highlight(group, fg, bg, sp, gui) abort
   execute "highlight" a:group
@@ -48,10 +53,10 @@ let s:orn_midd = '#f28444'
 let s:orn_deep = '#e66422'
 
 let s:gold_lite = '#e6b422'
-let s:gold_deep = '#D4AC04'
+let s:gold_deep = '#d4ac04'
 
-let s:red_lite = '#E73647'
-let s:red_dark = '#C03647'
+let s:red_lite = '#e73647'
+let s:red_dark = '#c03647'
 
 " }}}
 
@@ -60,42 +65,42 @@ let s:red_dark = '#C03647'
 
 " Highlight Group ························································{{{
 
-" call s:my_highlight('ColorColumn',      '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 'colorcolumn'で設定された列の表示に使われる
-" call s:my_highlight('Conceal',          '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " Concealされたテキストの代わりに表示される代替文字の表示に使われる
+call s:my_highlight('ColorColumn',      '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 'colorcolumn'で設定された列の表示に使われる
+call s:my_highlight('Conceal',          s:orn_lite,  '#xxxxxx',   '#xxxxxx', 'NONE')  " Concealされたテキストの代わりに表示される代替文字の表示に使われる
 call s:my_highlight('Cursor',           s:norma_bg,  s:normal_fg, '#xxxxxx', 'NONE')  " カーソル下の文字
 call s:my_highlight('lCursor',          s:norma_bg,  s:normal_fg, '#xxxxxx', 'NONE')  " language-mappingが使用されているときのカーソル下の文字
 call s:my_highlight('CursorIM',         s:norma_bg,  s:normal_fg, '#xxxxxx', 'NONE')  " Cursorと同じだが、IMEモードにいる時使われるCursorIM
-" call s:my_highlight('CursorColumn',     '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 'cursorcolumn'がオンになっている時のカードル画面上の桁
-" call s:my_highlight('CursorLine',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 'cursorline'がオンになっている時のカーソルがある画面上の行
+call s:my_highlight('CursorColumn',     '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 'cursorcolumn'がオンになっている時のカードル画面上の桁
+call s:my_highlight('CursorLine',       '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 'cursorline'がオンになっている時のカーソルがある画面上の行
 call s:my_highlight('Directory',        s:gold_lite, '#xxxxxx',   '#xxxxxx', 'NONE')  " ディレクトリ名(とリストにある特別な名前)
 call s:my_highlight('DiffAdd',          '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 差分モード: 追加された行
 call s:my_highlight('DiffChange',       '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 差分モード: 変更された行
 call s:my_highlight('DiffDelete',       '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 差分モード: 削除された行
 call s:my_highlight('DiffText',         '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " 差分モード: 変更された行中の変更されたテキスト
 call s:my_highlight('EndOfBuffer',      s:orn_midd,  '#xxxxxx',   '#xxxxxx', 'NONE')  " バッファ中で最終業以降の領域を埋めるための行
-" call s:my_highlight('ErroGrMsg',         '#xxxxxx',  '#xxxxxx',   '#xxxxxx', 'NONE')  " コマンドラインに現れるエラーメッセージ
+call s:my_highlight('ErrorMsg',         s:red_lite,  s:gold_lite, '#xxxxxx', 'NONE')  " コマンドラインに現れるエラーメッセージ
 call s:my_highlight('VertSplit',        s:grey_lite, '#xxxxxx',   '#xxxxxx', 'NONE')  " 垂直分割したウィンドウの区切りとなる桁
 call s:my_highlight('Folded',           s:orn_deep,  '#xxxxxx',   '#xxxxxx', 'NONE')  " 閉じた折りたたみの行
-" call s:my_highlight('FoldColumn',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 'foldcolumn'
+call s:my_highlight('FoldColumn',       '#xxxxxx',   s:gold_lite, '#xxxxxx', 'NONE')  " 'foldcolumn'
 call s:my_highlight('SignColumn',       s:linenr_fg, '#xxxxxx',   '#xxxxxx', 'NONE')  " 目印signsが表示される桁
 call s:my_highlight('IncSearch',        s:grey_midd, s:gold_lite, '#xxxxxx', 'NONE')  " 'incsearch'のハイライト; ':s ///c'で置換されたテキストにも使われる
 call s:my_highlight('LineNr',           s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " ':number'と':#'コマンドの行番号。'number'オプションか'relativenumber'にも使用。
 call s:my_highlight('LineNrAvove',      s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " 'relativenumber'オプションが設定されている時のカーソル行の上の行番号。
 call s:my_highlight('LineNrBelow',      s:linenr_fg, s:linenr_bg, '#xxxxxx', 'NONE')  " 'relativenumber'オプションが設定されている時のカーソル行の下の行番号。
-" call s:my_highlight('CursorLineNr',     '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-" call s:my_highlight('CursorLineSign',   '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 
-" call s:my_highlight('CursorLineFold',   '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " 
-" call s:my_highlight('MatchParen',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " カーソル下の文字、または直後の文字が括弧である時、その文字と対応する括弧に使われる。
+call s:my_highlight('CursorLineNr',     s:orn_lite,  s:grey_deep, '#xxxxxx', 'NONE')  " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:my_highlight('CursorLineSign',   s:orn_lite,  s:grey_deep, '#xxxxxx', 'NONE')  " 
+call s:my_highlight('CursorLineFold',   s:orn_lite,  s:grey_deep, '#xxxxxx', 'NONE')  " 
+call s:my_highlight('MatchParen',       s:red_dark,  '#xxxxxx',   '#xxxxxx', 'NONE')  " カーソル下の文字、または直後の文字が括弧である時、その文字と対応する括弧に使われる。
 call s:my_highlight('ModeMsg',          s:orn_deep,  '#xxxxxx',   '#xxxxxx', 'NONE')  " 'showmode'のメッセージ ex) '-- INSERT --'
-" call s:my_highlight('MoreMsg',          '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " more-prompt
+call s:my_highlight('MoreMsg',          s:orn_deep,  '#xxxxxx',   '#xxxxxx', 'NONE')  " more-prompt
 call s:my_highlight('NonText',          s:orn_deep,  '#xxxxxx',   '#xxxxxx', 'NONE')  " ウィンドウの端の'@'と'showbreak'で設定された文字など、実際のテキストには存在しない文字。
 call s:my_highlight('Normal',           s:normal_fg, s:norma_bg,  '#xxxxxx', 'NONE')  " 通常のテキスト
 call s:my_highlight('PMenu',            s:grey_lite, s:grey_midd, '#xxxxxx', 'NONE')  " ポップアップメニュー: 通常のテキスト
 call s:my_highlight('PMenuSel',         s:orn_deep,  s:grey_lite, '#xxxxxx', 'NONE')  " ポップアップメニュー: 選択されている項目
 call s:my_highlight('PMenuSbar',        s:grey_midd, s:grey_deep, '#xxxxxx', 'NONE')  " ポップアップメニュー: スクロールバー
 call s:my_highlight('PMenuThumb',       s:grey_lite, s:grey_lite, '#xxxxxx', 'NONE')  " ポップアップメニュー: スクロールバーのつまみ部分
-" call s:my_highlight('Question',         '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " ヒットエンタープロンプトhit-enterとyes/noクエスチョン
-" call s:my_highlight('QuickFixLine',     '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " quickfixウィンドウ内の現在のquickfix項目
+call s:my_highlight('Question',         s:orn_lite,  '#xxxxxx',   '#xxxxxx', 'NONE')  " ヒットエンタープロンプトhit-enterとyes/noクエスチョン
+call s:my_highlight('QuickFixLine',     '#xxxxxx',   s:grey_deep, '#xxxxxx', 'NONE')  " quickfixウィンドウ内の現在のquickfix項目
 call s:my_highlight('Search',           s:grey_midd, s:gold_lite, '#xxxxxx', 'NONE')  " 最後に検索した語のハイライト
 call s:my_highlight('CurSearch',        s:grey_midd, s:gold_lite, '#xxxxxx', 'NONE')  " 最後に検索した語のハイライト
 " call s:my_highlight('SpecialKey',       '#xxxxxx',   '#xxxxxx',   '#xxxxxx', 'NONE')  " ':map'でリストされるメタキーと特別なキー
@@ -169,8 +174,6 @@ call s:my_highlight('Error',            s:red_dark,  '#xxxxxx',   '#xxxxxx', 'NO
 call s:my_highlight('Todo',             s:red_lite,  s:gold_lite, '#xxxxxx', 'NONE')  " TODO FIXME XXX etc...
 
 " }}}
-
-
 
 
 " Vim Help highlighting ···················································{{{
