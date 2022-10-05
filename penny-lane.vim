@@ -48,10 +48,10 @@ let s:orn_midd = '#f28444'
 let s:orn_deep = '#e66422'
 
 let s:gold_lite = '#e6b422'
-let s:gold_deep = '#D4AC04'
+let s:gold_deep = '#d4ac04'
 
-let s:red_lite = '#E73647'
-let s:red_dark = '#C03647'
+let s:red_lite = '#e73647'
+let s:red_dark = '#c03647'
 
 " }}}
 
