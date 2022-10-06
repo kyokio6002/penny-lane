@@ -1,7 +1,5 @@
 # Penny-lane
 
-model: penny lane from Almost Famous
-
 <p align="center">
   <img src="images/penny-lane.gif"/>
 </p>
