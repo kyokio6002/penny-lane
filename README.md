@@ -6,7 +6,7 @@
 
 ## color reference
 <p align="center">
-  <img src="images/color_pallet_mini.png"/>
+  <img src="images/color_pallet.png"/>
 </p>
 
 
